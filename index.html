@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Shutdown</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <h1>Remote Power</h1>
+    <div class="actions">
+        <button id="shutdownBtn"><i class="fa-solid fa-power-off"></i><br>SHUTDOWN</button>
+        <button id="restartBtn"><i class="fa-solid fa-refresh"></i><br>RESTART</button>
+        <button id="sleepBtn"><i class="fa-solid fa-bed"></i><br>SLEEP</button>
+    </div>
+    
+
+    <script>
+        function executeCommand(endpoint) {
+            fetch(`/.netlify/functions/${endpoint}`)
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        document.getElementById('shutdownBtn').addEventListener('click', function() {
+            executeCommand('shutdown');
+        });
+
+        document.getElementById('restartBtn').addEventListener('click', function() {
+            executeCommand('restart');
+        });
+
+        document.getElementById('sleepBtn').addEventListener('click', function() {
+            executeCommand('sleep');
+        });
+    </script>
+</body>
+</html>

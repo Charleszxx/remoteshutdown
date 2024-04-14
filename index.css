@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	user-select: none;
+  	scroll-behavior: smooth;
+	font-family: 'Poppins';
+	transition: 0.5s;
+}
+
+body
+{
+	width: 100%;
+  	background: transparent;
+	/*scroll-snap-align: start;*/
+}
+
+::-webkit-scrollbar{
+  color: white;
+  background: transparent;
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: darkorange;
+}
+
+h1
+{
+    width: 100%;
+    height: auto;
+    padding:10px;
+    text-align: center;
+    background: darkblue;
+    color:white;
+}
+
+.actions
+{
+    width:100%;
+    height:100%;
+    padding:10px;
+
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+#shutdownBtn
+{
+    border: none;
+    outline: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+#shutdownBtn:hover
+{
+    background: darkred;
+}
+
+#restartBtn
+{
+    border: none;
+    outline: none;
+    background: #FF4F4B;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+#restartBtn:hover
+{
+    background: darkred;
+}
+
+@media(max-aspect-ratio: 16/9)
+{
+    h1
+    {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        background: darkblue;
+        color:white;
+        font-size: 90px;
+    }
+
+    .actions
+    {
+        width:100%;
+        height:100%;
+        padding:10px;
+
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    #shutdownBtn, #restartBtn, #sleepBtn
+    {
+        border: none;
+        outline: none;
+        background: red;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #shutdownBtn:hover
+    {
+        background: darkred;
+    }
+}
